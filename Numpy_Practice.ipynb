@@ -1,0 +1,439 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0.         0.69314718]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "a = np.array([1,2])\n",
+    "b = np.array([2,1])\n",
+    "\n",
+    "z = np.log(a) \n",
+    "print(z)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2.71828183 7.3890561 ]\n"
+     ]
+    }
+   ],
+   "source": [
+    "z = np.exp(a)\n",
+    "print(z)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1.         1.41421356]\n"
+     ]
+    }
+   ],
+   "source": [
+    "z = np.sqrt(a)\n",
+    "print(z)\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4\n"
+     ]
+    }
+   ],
+   "source": [
+    "z = np.dot(a,b)\n",
+    "z = a.dot(b)\n",
+    "print(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.23606797749979\n"
+     ]
+    }
+   ],
+   "source": [
+    "#to find magnitude of a\n",
+    "\n",
+    "z = np.linalg.norm(a)\n",
+    "print(z)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "4.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#angle b/w two vectors\n",
+    "\n",
+    "cosangle = a.dot(b) / np.linalg.norm(a) * np.linalg.norm(b)\n",
+    "print(cosangle)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "nan\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\RISHINA\\Anaconda3\\lib\\site-packages\\ipykernel_launcher.py:2: RuntimeWarning: invalid value encountered in arccos\n",
+      "  \n"
+     ]
+    }
+   ],
+   "source": [
+    "# to print angle in radian\n",
+    "angle = np.arccos(cosangle)\n",
+    "print(angle)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 2 3]\n",
+      " [4 5 6]]\n",
+      "1\n",
+      "[[1 2 3]\n",
+      " [4 5 6]]\n",
+      "[[1 4]\n",
+      " [2 5]\n",
+      " [3 6]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#official documntation is against using matrix\n",
+    "#so we convert matrix into array\n",
+    "\n",
+    "a = np.matrix([[1,2,3],[4,5,6]])\n",
+    "print(a)\n",
+    "print(a[0,0])\n",
+    "x = np.array(a)\n",
+    "print(x)\n",
+    "print(x.T) #transpose"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0. 0. 0. 0. 0.]\n",
+      "[[0. 0.]\n",
+      " [0. 0.]]\n",
+      "[[1. 1. 1.]\n",
+      " [1. 1. 1.]\n",
+      " [1. 1. 1.]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#to primt 1-D array of zeros\n",
+    "z = np.zeros(5)\n",
+    "print(z)\n",
+    "\n",
+    "m = np.zeros((2,2)) #5×5 matrix of zeros\n",
+    "print(m)\n",
+    "\n",
+    "#for 1's\n",
+    "o = np.ones((3,3))\n",
+    "print(o)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[0.20337321 0.58150237]\n",
+      " [0.51576148 0.45329342]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#no from random varuable b/w 0 & 1\n",
+    "r = np.random.random((2,2))\n",
+    "print(r)  #matrix 2×2 of random no. b/w 0&1\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[-0.98297955  1.01575217]\n",
+      " [ 0.46788792  1.28665839]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#no from gaussian distribution\n",
+    "#with mean 0 and variance 1\n",
+    "h = np.random.randn(2,2)\n",
+    "print(h)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.4468297309074393\n",
+      "0.7684457345716653\n",
+      "[[ 34  43]\n",
+      " [ 26  32]\n",
+      " [120 151]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#for mean and variance\n",
+    "print(h.mean())\n",
+    "print(h.var())\n",
+    "\n",
+    "p = np.array([[1,2,3],[2,2,1],[6,7,9]])\n",
+    "q = np.array([[4,5],[6,7],[6,8]])\n",
+    "\n",
+    "r = p.dot(q)\n",
+    "print(r)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[-1.57142857 -0.42857143  0.57142857]\n",
+      " [ 1.71428571  1.28571429 -0.71428571]\n",
+      " [-0.28571429 -0.71428571  0.28571429]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#to find incverse\n",
+    "pinv = np.linalg.inv(p)\n",
+    "print(pinv)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[ 1.00000000e+00 -2.22044605e-16  5.55111512e-17]\n",
+      " [ 5.55111512e-17  1.00000000e+00  5.55111512e-17]\n",
+      " [ 1.38777878e-15  1.11022302e-15  1.00000000e+00]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "# to check if inverse is correct\n",
+    " #we multiply it by array\n",
+    "#if we get identity matrix thn right\n",
+    "\n",
+    "correct = p.dot(pinv)\n",
+    "print(correct)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-6.999999999999999\n"
+     ]
+    }
+   ],
+   "source": [
+    "#matrix determinent\n",
+    "\n",
+    "#to find determinent of an array\n",
+    "d = np.linalg.det(p)\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1 2 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#diagonal of matrix\n",
+    "\n",
+    "di = np.diag(p)\n",
+    "print(di)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[[1 0 0 0]\n",
+      " [0 2 0 0]\n",
+      " [0 0 3 0]\n",
+      " [0 0 0 4]]\n"
+     ]
+    }
+   ],
+   "source": [
+    "#to make diagonal matrix\n",
+    "\n",
+    "x = np.diag([1,2,3,4])\n",
+    "print(x)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "#trace of a matrix\n",
+    "\n",
+    "x = np.trace(x)\n",
+    "print(x)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
